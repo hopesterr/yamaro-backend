@@ -9,6 +9,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Route GET "/" à ajouter ici :
+app.get("/", (req, res) => {
+  res.send("✅ Backend Yamaro API is running.");
+});
+
 // Middleware pour vérifier le token JWT
 const authenticateToken = async (req, res, next) => {
     const authHeader = req.headers['authorization'];
